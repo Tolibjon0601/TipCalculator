@@ -5,8 +5,8 @@ function App() {
   const [bill, setBill] = useState('');
   const [tipPercentage, setTipPercentage] = useState('');
   const [numberOfPeople, setNumberOfPeople] = useState('');
-  const [tipAmount, setTipAmount] = useState(0);
-  const [totalPerPerson, setTotalPerPerson] = useState(0);
+  const [tipAmount, setTipAmount] = useState("0.00");
+  const [totalPerPerson, setTotalPerPerson] = useState("0.00");
 
   const calculateTip = (tipValue = tipPercentage) => {
     const billValue = parseFloat(bill);
@@ -42,9 +42,9 @@ function App() {
       </h1>
       <div className="h-[400px] w-[700px] bg-white rounded-3xl mt-10 mx-auto flex">
 
-        <div className="bg-transparent p-8 rounded-lg max-w-sm w-full">
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">Bill Amount</label>
+        <div className="bg-transparent p-8 rounded-lg w-[450px] ">
+          <div>
+            <label className="block text-gray-700 text-sm font-bold mb-2">Bill</label>
             <input
               type="number"
               placeholder="0"
@@ -53,47 +53,48 @@ function App() {
               className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
-            <label className="block text-gray-700 text-sm font-bold mb-2">Tip Percentage</label>
+            <label className="block text-gray-700 text-sm font-bold mb-2"> Select Tip% </label>
 
-          <div className="mb-4 flex flex-wrap">
-            <input
-              type="number"
-              placeholder="Custom"
-              value={tipPercentage}
-              onChange={(evt) => setTipPercentage(evt.target.value)}
-              className="px-4 py-2 text-gray-700 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <div className="flex space-x-2 mt-2">
+          <div className="mb-4 flex-wrap">
+
+            <div className="flex flex-wrap gap-3 mt-2">
               <button
                 onClick={() => setTipAndCalculate(5)}
-                className="bg-[#00474B] text-white py-2 px-4 rounded-lg font-black "
+                className="bg-[#00474B] text-white py-3- px-7 rounded-lg font-black hover:bg-[#21B19B] "
               >
                 5%
               </button>
               <button
                 onClick={() => setTipAndCalculate(10)}
-                className="bg-[#00474B] text-white py-2 px-4 rounded-lg font-black "
+                 className="bg-[#00474B] text-white py-3- px-7 rounded-lg font-black hover:bg-[#21B19B] "
               >
                 10%
               </button>
               <button
                 onClick={() => setTipAndCalculate(15)}
-                className="bg-[#00474B] text-white py-2 px-4 rounded-lg  font-black "
+                  className="bg-[#00474B] text-white py-3- px-7 rounded-lg font-black hover:bg-[#21B19B] "
               >
                 15%
               </button>
               <button
                 onClick={() => setTipAndCalculate(25)}
-                className="bg-[#00474B] text-white py-2 px-4 rounded-lg  font-black "
+                  className="bg-[#00474B] text-white py-3- px-7 rounded-lg font-black hover:bg-[#21B19B] "
               >
                 25%
               </button>
               <button
                 onClick={() => setTipAndCalculate(50)}
-                className="bg-[#00474B] text-white py-2 px-4 rounded-lg  font-black "
+                  className="bg-[#00474B] text-white py-3- px-7 rounded-lg font-black hover:bg-[#21B19B] "
               >
                 50%
               </button>
+              <input
+              type="number"
+              placeholder="Custom"
+              value={tipPercentage}
+              onChange={(evt) => setTipPercentage(evt.target.value)}
+              className=" bg-[#F3F8FB] text-white py-3- px-7 rounded-lg font-black"
+            />
             </div>
           </div>
 
@@ -109,9 +110,24 @@ function App() {
           </div>
         </div>
 
-        <div className="bg-[#00474B] m-6 w-80 rounded-lg p-6  flex flex-col  gap-20">
-     <p className="text-lg text-white">Tip Amount  <span>Person</span>: <span className="font-black text-5xl">${tipAmount}</span></p>
-          <p className="text-lg text-white">Total  <span>Person</span>: <span className="font-semibold">${totalPerPerson}</span></p>
+        <div className="bg-[#00474B] m-6 w-96 rounded-lg p-6  flex flex-col  gap-12">
+ <div className='flex justify-between' >
+ <div> <p  className="text-lg text-white ">Tip Amount</p>
+  <p className='text-[#679DA2]' >/person</p></div>
+  <div>
+  <p className="font-black text-5xl text-[#21B19B]">${tipAmount}</p>
+  </div>
+ </div>
+
+ <div className='flex justify-between' >
+ <div> <p  className="text-lg text-white ">Total</p>
+  <p className='text-[#679DA2]'>/person</p></div>
+<div>
+<p className="font-black text-5xl text-[#21B19B]">${totalPerPerson}</p>
+</div>
+ </div>
+
+
           <div className='flex space-x-4 mt-4'>
             <button
               onClick={calculateTip}
