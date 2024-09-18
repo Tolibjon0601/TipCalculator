@@ -60,31 +60,31 @@ function App() {
             <div className="flex flex-wrap gap-3 mt-2">
               <button
                 onClick={() => setTipAndCalculate(5)}
-                className="bg-[#00474B] text-white py-3- px-7 rounded-lg font-black hover:bg-[#21B19B] "
+                className="bg-[#00474B] text-white py-3 px-7 rounded-lg font-black hover:bg-[#21B19B] "
               >
                 5%
               </button>
               <button
                 onClick={() => setTipAndCalculate(10)}
-                 className="bg-[#00474B] text-white py-3- px-7 rounded-lg font-black hover:bg-[#21B19B] "
+                 className="bg-[#00474B] text-white py-3 px-7 rounded-lg font-black hover:bg-[#21B19B] "
               >
                 10%
               </button>
               <button
                 onClick={() => setTipAndCalculate(15)}
-                  className="bg-[#00474B] text-white py-3- px-7 rounded-lg font-black hover:bg-[#21B19B] "
+                  className="bg-[#00474B] text-white py-3 px-7 rounded-lg font-black hover:bg-[#21B19B] "
               >
                 15%
               </button>
               <button
                 onClick={() => setTipAndCalculate(25)}
-                  className="bg-[#00474B] text-white py-3- px-7 rounded-lg font-black hover:bg-[#21B19B] "
+                  className="bg-[#00474B] text-white py-3 px-7 rounded-lg font-black hover:bg-[#21B19B] "
               >
                 25%
               </button>
               <button
                 onClick={() => setTipAndCalculate(50)}
-                  className="bg-[#00474B] text-white py-3- px-7 rounded-lg font-black hover:bg-[#21B19B] "
+                  className="bg-[#00474B] text-white py-3 px-7 rounded-lg font-black hover:bg-[#21B19B] "
               >
                 50%
               </button>
@@ -93,7 +93,7 @@ function App() {
               placeholder="Custom"
               value={tipPercentage}
               onChange={(evt) => setTipPercentage(evt.target.value)}
-              className=" bg-[#F3F8FB] text-white py-3- px-7 rounded-lg font-black"
+              className=" bg-[#F3F8FB] text-white py-3 px-7 rounded-lg font-black"
             />
             </div>
           </div>
