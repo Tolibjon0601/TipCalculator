@@ -47,50 +47,50 @@ function App() {
             <label className="block text-gray-700 text-sm font-bold mb-2">Bill Amount</label>
             <input
               type="number"
-              placeholder="Enter bill amount"
+              placeholder="0"
               value={bill}
-              onChange={(e) => setBill(e.target.value)}
+              onChange={(evt) => setBill(evt.target.value)}
               className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
-
-          <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">Tip Percentage</label>
+
+          <div className="mb-4 flex flex-wrap">
             <input
               type="number"
-              placeholder="Enter tip percentage"
+              placeholder="Custom"
               value={tipPercentage}
-              onChange={(e) => setTipPercentage(e.target.value)}
-              className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              onChange={(evt) => setTipPercentage(evt.target.value)}
+              className="px-4 py-2 text-gray-700 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <div className="flex space-x-2 mt-2">
               <button
                 onClick={() => setTipAndCalculate(5)}
-                className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition-all"
+                className="bg-[#00474B] text-white py-2 px-4 rounded-lg font-black "
               >
                 5%
               </button>
               <button
                 onClick={() => setTipAndCalculate(10)}
-                className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition-all"
+                className="bg-[#00474B] text-white py-2 px-4 rounded-lg font-black "
               >
                 10%
               </button>
               <button
                 onClick={() => setTipAndCalculate(15)}
-                className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition-all"
+                className="bg-[#00474B] text-white py-2 px-4 rounded-lg  font-black "
               >
                 15%
               </button>
               <button
                 onClick={() => setTipAndCalculate(25)}
-                className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition-all"
+                className="bg-[#00474B] text-white py-2 px-4 rounded-lg  font-black "
               >
                 25%
               </button>
               <button
                 onClick={() => setTipAndCalculate(50)}
-                className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition-all"
+                className="bg-[#00474B] text-white py-2 px-4 rounded-lg  font-black "
               >
                 50%
               </button>
@@ -101,7 +101,7 @@ function App() {
             <label className="block text-gray-700 text-sm font-bold mb-2">Number of People</label>
             <input
               type="number"
-              placeholder="Enter number of people"
+              placeholder="Custom"
               value={numberOfPeople}
               onChange={(e) => setNumberOfPeople(e.target.value)}
               className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -109,9 +109,9 @@ function App() {
           </div>
         </div>
 
-        <div className="bg-[#00474B] m-6 w-80 rounded-lg p-6">
-          <p className="text-lg text-white">Tip Amount per Person: <span className="font-semibold">${tipAmount}</span></p>
-          <p className="text-lg text-white">Total per Person: <span className="font-semibold">${totalPerPerson}</span></p>
+        <div className="bg-[#00474B] m-6 w-80 rounded-lg p-6  flex flex-col  gap-20">
+     <p className="text-lg text-white">Tip Amount  <span>Person</span>: <span className="font-black text-5xl">${tipAmount}</span></p>
+          <p className="text-lg text-white">Total  <span>Person</span>: <span className="font-semibold">${totalPerPerson}</span></p>
           <div className='flex space-x-4 mt-4'>
             <button
               onClick={calculateTip}
