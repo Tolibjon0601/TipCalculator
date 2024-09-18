@@ -44,7 +44,7 @@ function App() {
 
         <div className="bg-transparent p-8 rounded-lg w-[450px] ">
           <div>
-            <label className="block text-gray-700 text-sm font-bold mb-2">Bill</label>
+            <h1 className="block text-gray-700 text-sm font-bold mb-2">Bill</h1>
             <input
               type="number"
               placeholder="0"
@@ -93,7 +93,7 @@ function App() {
               placeholder="Custom"
               value={tipPercentage}
               onChange={(evt) => setTipPercentage(evt.target.value)}
-              className=" bg-[#F3F8FB] text-white py-3 px-7 rounded-lg font-black"
+              className=" bg-[#F3F8FB] text-gray-700 py-3 px-7 rounded-lg font-black"
             />
             </div>
           </div>
@@ -128,7 +128,7 @@ function App() {
  </div>
 
 
-          <div className='flex space-x-4 mt-4'>
+          <div className='flex space-x-4 mt-4 justify-center'>
             <button
               onClick={calculateTip}
               className="bg-[#25C2AD] text-white py-2 px-4 rounded-lg"
@@ -137,7 +137,7 @@ function App() {
             </button>
             <button
               onClick={resetCalculator}
-              className="bg-[#25C2AD] text-white py-2 px-4 rounded-lg"
+              className="bg-[#25C2AD] text-white py-3 px-8 rounded-lg"
             >
               Reset
             </button>
